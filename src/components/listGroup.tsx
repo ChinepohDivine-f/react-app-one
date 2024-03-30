@@ -1,7 +1,13 @@
-import { MouseEvent, useState } from "react";
+import { useState } from "react";
 
-function ListGroup() {
-  const items = ["New York", "Buea", "Yaounde", "Douala"];
+// interface props
+interface Props {
+  items: string[];
+  heading: string;
+}  
+
+function ListGroup({items, heading}: Props) {
+  // const items = ["New York", "Buea", "Yaounde", "Douala"];
   // let selectectedIndex = 0;
   // items  = [];
 
@@ -20,7 +26,7 @@ function ListGroup() {
   return (
     <>
       {/* react fragment*/}
-      <h1>My list</h1>
+      <h1>{heading}</h1>
       {/* {getMessage} */}
       {items.length === 0 && <p>No item Found</p>}
       {/* if true the page will be rendered else the error message will be displayed */}
